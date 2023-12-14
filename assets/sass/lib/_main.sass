@@ -1,0 +1,266 @@
+.main
+    display: flex
+    flex-direction: column
+    gap: 0
+    position: relative
+    .menuBar
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 45px
+        background-color: $beige
+        z-index: 2
+        position: fixed
+        width: 100vw
+        .menuItem
+            display: flex
+            flex-direction: row
+            align-items: center
+            gap: 35px
+            font-size: $normal
+            font-weight: $bold
+            color: $lightGrey  
+            p
+                cursor: pointer
+                box-sizing: border-box
+                padding: 13px 0
+                border-bottom: 2px solid transparent
+                margin-top: 17px
+                position: relative
+                transition: all 0.3s ease
+                &:hover
+                    border-bottom: 2px solid $darkGrey
+                &.red
+                    color: $red
+                    &:hover
+                        border-bottom: 2px solid red
+
+    .galeria
+        display: block
+        position: relative
+        width: 100%
+        padding-top: 45px
+        .miniBox
+            display: flex
+            position: absolute
+            z-index: 2
+            left: 47%
+            bottom: 30px
+            gap: 5px
+            .mini
+                width: 0px
+                height: 0px
+                overflow: hidden
+                border-radius: 50px
+                cursor: pointer
+                border: 6px solid $beige
+                &.active
+                    border: 6px solid #73655E
+                
+        .arrows
+            z-index: 1
+            display: flex
+            position: absolute
+            bottom: 48%
+            width: 100%
+            justify-content: space-between
+            button
+                background-color: transparent
+                border: none
+                cursor: pointer
+            img
+                margin: 0 40px
+                width: 15px
+        .imgBox
+            height: 550px
+            display: block
+            width: 100%
+            overflow: hidden
+            img
+                display: block
+                width: 100%
+
+    .menuGallery
+        display: flex
+        background-color: $white
+        flex-direction: row
+        justify-content: center
+        align-content: center
+        flex-wrap: wrap
+        padding: 20px 12px
+        gap: 12px
+        .imgHover
+            cursor: pointer
+            overflow: hidden
+            height: 540px
+            width: 491px
+            img
+                cursor: pointer
+                transition: transform 1s ease
+                object-fit: cover
+                width: 100%
+                height: 100%
+                &:hover
+                    transform: scale(1.05)
+                    object-fit: cover
+
+    .cards
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 20px 25px
+        background-color: $white
+        .titleSection
+            display: flex
+            justify-content: center
+            font-size: $big
+            font-weight: $bold
+            color: $darkGrey
+        .cardsSection
+            display: flex
+            justify-content: space-between
+            flex-direction: row
+            flex-wrap: wrap
+            gap: 15px 0
+            padding-bottom: 40px
+
+    .footer
+        background-color: $white2
+        display: flex
+        flex-direction: column
+        padding: 40px
+        gap: 50px
+        .footerTop
+            display: flex
+            flex-direction: row
+            justify-content: left
+            gap: 320px
+            .formularioBox
+                display: flex
+                flex-direction: column
+                width: 400px
+                .contact
+                    display: flex
+                    flex-direction: column
+                    gap: 15px
+                    .name
+                        display: flex
+                        flex-direction: column                      
+                        input
+                            font-size: $normal
+                            color: $lightGrey
+                            font-family: 'Courier New', Courier, monospace
+                            background-color: transparent
+                            border: none
+                            border-bottom: 1px solid $lightGrey
+                            padding: 10px 0
+                            margin: 10px 0
+                        input:focus
+                            outline: 0
+                            
+                    .email 
+                        display: flex
+                        flex-direction: column
+                        input
+                            font-size: $normal
+                            color: $lightGrey
+                            font-family: 'Courier New', Courier, monospace
+                            background-color: transparent
+                            border: none
+                            border-bottom: 1px solid $lightGrey
+                            padding: 10px 0
+                        input:focus
+                            outline: 0
+                .tittleForm
+                    font-size: $normal
+                    color: $darkGrey
+                    font-weight: $bold
+                .suscribe
+                    display: flex
+                    justify-content: center
+                    align-content: center
+                    width: 100%
+                    background-color: $lightGrey
+                    font-size: $normal
+                    color: $white
+                    margin-top: 15px
+                    cursor: pointer
+                    &:hover
+                        background-color: #655953
+                    p
+                        margin: 8px
+                .captcha
+                    font-size: 0.6rem
+                    color: $lightGrey
+                    font-style: italic
+                    
+
+            .infoFooter
+                display: flex
+                flex-direction: row
+                gap: 200px
+                .infoFooterBox
+                    display: flex
+                    flex-direction: column
+                .tittleInfo
+                    font-size: $normal
+                    color: $darkGrey
+                    font-weight: $bold
+                .infoMenu
+                    font-size: $tiny
+                    color: $lightGrey
+                    p
+                        cursor: pointer
+                        &:hover
+                            color: #D8D4D2
+
+        .footerBottom
+            display: flex
+            flex-direction: row
+            gap: 550px
+            .country
+                display: flex
+                flex-direction: row
+                align-content: center
+                justify-content: center
+                font-size: $normal
+                color: $lightGrey
+                border: 1px solid $beige
+                padding: 0 18px
+                gap: 5px
+                cursor: pointer
+            .copy
+                font-size: $normal
+                color: $lightGrey
+                display: flex
+                flex-direction: row
+                gap: 20px
+                p
+                    cursor: pointer
+                    &:hover
+                        color: #D8D4D2
+    .up
+        z-index: 2
+        position: absolute
+        right: 20px
+        top: 660px
+        position: fixed
+        background-color: $white
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50px
+        width: 30px
+        height: 30px
+        border: 10px solid $beige
+        cursor: pointer
+        img
+            fill: $beige
+        &.hidden
+            display: none
+
+
+            
+
+            
+

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mais X Frida</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css
+    ">
+    <script src="app/main.js"></script>
+</head>
+<body class="app">
+    <a name="principio"></a>
+    <header class="header">
+        <div class="logo">
+            <img src="assets/img/MAISXFRIDA_logo 1.png" alt="">
+        </div>
+        <div class="icons">
+            <div class="profileContainer">
+                <div class="profileIcon">
+                    <img src="assets/img/profile.svg" alt="" onclick="toggleProfileOptions()">
+                </div>
+                <div class="profileOptions" id="profileOptions">
+                    <ul>
+                        <li><p>Membership area</p></li>
+                        <li><p>Profile</p></li>
+                        <li><p>Favorites</p></li>
+                        <li><p>Orders</p></li>
+                        <li><p>Configuration</p></li>
+                    </ul>
+                </div>
+            </div>
+            <img src="assets/img/search.svg" alt="">
+            <div class="cartContainer">
+                <div class="cartIconBox">
+                    <img class="cartIcon" src="assets/img/cart.svg" alt="">
+                    <span class="nrProducts">
+                        <p></p>
+                    </span>
+                </div>
+                <div class="overlayCart">
+                    <div class="cart">
+                        <div class="headerCart">
+                            <p>CART</p>
+                            <img class="closeIcon" src="assets/img/close.svg" alt="">
+                        </div>
+                        <div class="emptyCart">
+                            <div class="emptyTitle">
+                                <p>Your Cart is Empty</p>
+                            </div>
+                            <div class="columns">
+                                <div class="column1">
+                                    <p>NEW IN</p>
+                                    <p>SWIMWEAR</p>
+                                    <p>ACCESORIES</p>
+                                    <p>OUR JOURNEY</p>
+                                </div>
+                                <div class="column2">
+                                    <p>JEWELLERY</p>
+                                    <p>CLOTHING</p>
+                                    <p>ARCHIVE SALES</p>
+                                    <p>CONTACT</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fullCart">
+                            <div class="productsBox">
+                            </div>  
+                            <div class="orderNotes">
+                                <div class="notesBox">
+                                    <p>Add order notes</p>
+                                    <img src="assets/img/close.svg" alt="">
+                                </div>
+                                <div class="notesBox">
+                                    <p>Is this a gift?</p>
+                                    <img src="assets/img/close.svg" alt="">
+                                </div>
+                            </div>  
+                            <div class="checkOut">
+                                <div class="subtotal">
+                                    <p>SUBTOTAL</p>
+                                    <p class="priceSubtotal">
+                                        EUR
+                                    </p>
+                                </div>
+                                <span class="payButton">
+                                    <p>CHECK OUT</p>
+                                </span>
+                                <p class="infoCheckOut">
+                                    Shipping, taxes, and discount codes are calculated at checkout
+                                </p>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <main class="main">
+        <div class="menuBar">
+            <div class="menuItem">
+                <p>Shop</p>
+                <p>New In</p>
+                <p>Best Sellers</p>
+                <p class="red">Archive Sales</p>
+                <p>Get In Touch</p>
+            </div>
+        </div>
+        <div class="galeria">
+            <div class="miniBox">
+                <img class="mini active" src="assets/img/galeria1.webp" alt="" data-num="0">
+                <img class="mini" src="assets/img/galeria2.webp" alt="" data-num="1">
+                <img class="mini" src="assets/img/galeria3.jpg" alt="" data-num="2">
+                <img class="mini" src="assets/img/galeria4.webp" alt="" data-num="3">
+                <img class="mini" src="assets/img/galeria5.webp" alt="" data-num="4">
+            </div>
+            <div class="arrows">
+                <button id="left"><img src="assets/img/left.svg" alt=""></button>
+                <button id="right"><img src="assets/img/right.svg" alt=""></button>
+            </div>
+            <div class="imgBox" ><img id="imgBox" src="assets/img/galeria1.webp" alt=""></div>
+            
+        </div>
+        <div class="menuGallery">
+                <div class="imgHover">
+                    <a href="#jewellery"><img src="assets/img/Jewellery.png" alt=""></a>
+                </div>
+                <div class="imgHover">
+                    <img src="assets/img/Necklaces.png" alt="">
+                </div>
+                <div class="imgHover">
+                    <img src="assets/img/Clothing.png" alt="">
+                </div>
+                <div class="imgHover">
+                    <img src="assets/img/Swimwear.png" alt="">
+                </div>
+                <div class="imgHover">
+                    <img src="assets/img/Earrings.png" alt="">
+                </div>
+                <div class="imgHover">
+                    <a href="#accesories"><img src="assets/img/accesories.png" alt=""></a>
+                </div>
+        </div>
+        <div class="cards">
+            <a name="jewellery"></a>
+            <div class="titleSection">
+                <p>Jewelry</p>
+            </div>
+            <div class="cardsSection">
+                <span class="card" data-id="1" data-title="Sun Earrings Gold" data-price="€52,00" data-description="The Sun Charm features our stunning Sun Charm and gold-wire choker pairing. What makes the Sun Charm unique, however, is it personifies the very essence of Mais x Frida. Joy, warmth, and fortune—these three elements make us who we are.">
+                    <div class="imgBox">
+                        <img src="assets/img/pendientes1.webp" alt="">
+                        <img src="assets/img/hoverPendientes1.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Sun Earrings Gold</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€52,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="2" data-title="Gumamela Earrings Gold" data-price="€52,00" data-description="Gumamela flowers were given to women who represented conventional beauty standards. Although at Mais x Frida, we give these flowers an entirely new meaning. We believe that true beauty is not visible to the naked eye. Gumamela flowers represent fleeting beauty, but our gumamela earrings convey immortal beauty.">
+                    <div class="imgBox">
+                        <img src="assets/img/pendientes2.webp" alt="">
+                        <img src="assets/img/hoverPendintes2.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Gumamela Earrings Gold</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€52,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="3" data-title="Sunflower Earrings" data-price="€55,00" data-description="Bring a ray of sunshine wherever you go with our cute sunflower earrings! Each earring consists of a dainty sunflower piece dangling from a sleek gold-plated chain. These earrings pair best with loose, flowy dresses. Apart from positivity, sunflowers also symbolise new beginnings. They represent the hope and fortune needed to start afresh. Many even hand out sunflowers during graduation parties and business openings to convey good luck.">
+                    <div class="imgBox">
+                        <img src="assets/img/pendientes3.webp" alt="">
+                        <img src="assets/img/hoverPedintes3.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Sunflower Earrings</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€55,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="4" data-title="Mariposa Earrings Gold" data-price="€58,00" data-description="Handmade butterfly shape earring with molten texture finish.">
+                    <div class="imgBox">
+                        <img src="assets/img/pendientes4.webp" alt="">
+                        <img src="assets/img/pendientesHover4.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Mariposa Earrings Gold</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€58,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="5" data-title="Sun Ring Silver" data-price="€45,00" data-description="Sun ring shaped adjustable">
+                    <div class="imgBox">
+                        <img src="assets/img/anillo1.webp" alt="">
+                        <img src="assets/img/hoverAnillo1.jpg" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Sun Ring Silver</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€45,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="6" data-title="Rose Choker Orange" data-price="€55,00" data-description="Beaded flower with string, you can wear it as a choker and as a belt.">
+                    <div class="imgBox">
+                        <img src="assets/img/collar1.webp" alt="">
+                        <img src="assets/img/hoverCollar1.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Rose Choker Orange</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€55,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="7" data-title="Heart Belt Silver" data-price="€85,00" data-description="Heart shaped belt with string. You can algo wear it as a Necklace!">
+                    <div class="imgBox">
+                        <img src="assets/img/collar2.webp" alt="">
+                        <img src="assets/img/hoverCollar2.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Heart Belt Silver</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€85,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-id="8" data-title="Soleil Transparent Charm" data-price="€55,00" data-description="Sun shaped piece inside a resin charm with chain necklace.">
+                    <div class="imgBox">
+                        <img src="assets/img/collar3.webp" alt="">
+                        <img src="assets/img/hoverCollar3.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Soleil Transparent Charm</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€55,00</p>
+                        </div>
+                    </div>
+                </span>
+                <div class="overlayProduct" id="overlayProduct">
+                    <div class="details" id="details">
+                        <div class="imgBox" id="imgBox">
+                            <img src="" alt="">
+                        </div>
+                        <div class="textDetails">
+                            <div class="titleProduct">
+                                <p></p>
+                            </div>
+                            <div class="price">
+                                <p></p>
+                            </div>
+                            <span class="addCart">
+                                <p>ADD TO CART</p>
+                            </span>
+                            <div class="textDescription">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <a name="accesories"></a>
+            <div class="titleSection">
+                <p>Accessories</p>
+            </div>
+            <div class="cardsSection">
+                <span class="card" data-title="Nude Beanie" data-price="€45,00" data-description="Crochet hats for your summer looks! Cute and fun to combine with everything!">
+                    <div class="imgBox">
+                        <img src="assets/img/gorro1.webp" alt="">
+                        <img src="assets/img/hoverGorro1.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Nude Beanie</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€45,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="Chocolate Beanie" data-price="€45,00" data-description="Crochet hats for your summer looks! Cute and fun to combine with everything!">
+                    <div class="imgBox">
+                        <img src="assets/img/gorro2.webp" alt="">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Chocolate Beanie</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€45,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="Blue Beanie" data-price="€45,00" data-description="Crochet hats for your summer looks! Cute and fun to combine with everything!">
+                    <div class="imgBox">
+                        <img src="assets/img/gorro4.webp" alt="">
+                        <img src="assets/img/hoverGorro4.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Blue Beanie</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€45,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="Crochet Hat Pink" data-price="€48,00" data-description="Crochet hats for your summer looks! Cute and fun to combine with everything!">
+                    <div class="imgBox">
+                        <img src="assets/img/gorro3.webp" alt="">
+                        <img src="assets/img/hoverGorro3.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Crochet Hat Pink</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€48,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="Nina Wool Scarf" data-price="€58,00" data-description="Our Wool Scarfs is the perfect garment for your fall looks! When the cold starts but still want to wear light and soft accessories to cover your neck, the wool scarf is the best option. Cute and fun to combine with your outfits.">
+                    <div class="imgBox">
+                        <img src="assets/img/bufanda1.jpg" alt="">
+                        <img src="assets/img/hoverBufanda1.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Nina Wool Scarf</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€58,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="Purple Flower Pin" data-price="€35,00" data-description="Crochet pins for your summer looks! Cute and fun to combine with everything! It comes with a robe so you can accessorize it as a belt too!">
+                    <div class="imgBox">
+                        <img src="assets/img/cinturon1.webp" alt="">
+                        <img src="assets/img/hoverCinturon1.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Purple Flower Pin</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€35,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="White Flower Pin" data-price="€35,00" data-description="Crochet pins for your summer looks! Cute and fun to combine with everything! It comes with a robe so you can accessorize it as a belt too!">
+                    <div class="imgBox">
+                        <img src="assets/img/cinturon2.webp" alt="">
+                        <img src="assets/img/hoverCinturon2.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>White Flower Pin</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€35,00</p>
+                        </div>
+                    </div>
+                </span>
+                <span class="card" data-title="Black Flower Pin" data-price="€35,00" data-description="Crochet pins for your summer looks! Cute and fun to combine with everything! It comes with a robe so you can accessorize it as a belt too!">
+                    <div class="imgBox">
+                        <img src="assets/img/cinturon3.webp" alt="">
+                        <img src="assets/img/hoverCinturon3.webp" alt="" class="hover">
+                    </div>
+                    <div class="textCard">
+                        <div class="textCardProduct">
+                            <p>Black Flower Pin</p>
+                        </div>
+                        <div class="textCardPrice">
+                            <p>€35,00</p>
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <div class="overlayProduct" id="overlayProduct">
+                <div class="details" id="details">
+                    <div class="imgBox">
+                        <img src="" alt="">
+                    </div>
+                    <div class="textDetails">
+                        <div class="titleProduct">
+                            <p></p>
+                        </div>
+                        <div class="price">
+                            <p></p>
+                        </div>
+                        <span class="addCart">
+                            <p>ADD TO CART</p>
+                        </span>
+                        <div class="textDescription">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footerTop">
+                <div class="formularioBox">
+                    <div class="tittleForm">
+                        <p>+ Stay updated. Follow the sun +</p>
+                    </div>
+                    <div class="contact">
+                        <div class="name">
+                            <input type="text" class="name" placeholder="Name">
+                        </div>
+                        <div class="email">
+                            <input type="email" class="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <span class="suscribe">
+                        <p>SUSCRIBE</p>
+                    </span>
+                    <div class="captcha">
+                        <p>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply. </p>
+                    </div>
+                </div>
+                <div class="infoFooter">
+                    <div class="infoFooterBox">
+                        <div class="tittleInfo">
+                            <p>Assistance</p>
+                        </div>
+                        <div class="infoMenu">
+                            <p>Search</p>
+                            <p>FAQ</p>
+                            <p>Shipping & Returns</p>
+                            <p>CCPA</p>
+                            <p>Contact</p>
+                        </div>     
+                    </div>               
+                        <div class="infoFooterBox">
+                            <div class="tittleInfo">
+                                <p>Legal</p>
+                            </div>
+                            <div class="infoMenu">
+                                <p>Terms of Service</p>
+                                <p>Refund policy</p>
+                                <p>Do not sell my personal information</p>
+                                <p>Privacy Policy</p>
+                                <p>Legal Notice</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <span class="country">
+                    <p>SPAIN (EUR €)</p>
+                    <img src="assets/img/arrow.svg" alt="">
+                </span>
+                <div class="copy">
+                    <p>© Mais X Frida 2023</p>
+                    <p>Powered by Shopify</p>
+                </div>
+            </div>
+        </footer>
+        <a href="#principio">
+            <span class="up">
+                <img src="assets/img/up.svg" alt="">
+            </span>
+        </a>
+    </main>
+    <script src="app/main.js"></script>
+</body>
+</html>

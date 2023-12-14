@@ -1,0 +1,49 @@
+.card
+    display: flex
+    flex-direction: column
+    width: 350px
+    height: 438px
+    background-color: $white
+    padding-bottom: 15px
+    cursor: pointer
+    .imgBox
+        display: flex
+        overflow: hidden
+        width: 100%
+        justify-content: center
+        position: relative
+        img
+            size: 100%
+            transition: transform 0.3s ease-in-out
+        &:hover
+            transform: scale(1)
+        .hover 
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+            width: 100%
+            object-fit: cover
+            transition: opacity 0.3s ease
+            background-color: $white
+            &:hover
+                opacity: 1
+                size: 100%
+                object-fit: cover
+                
+    .textCard
+        display: flex
+        flex-direction: column
+        .textCardProduct
+            font-size: $normal
+            color: $darkGrey
+            font-weight: $bold
+            p
+                margin: 5px 20px 
+        .textCardPrice
+            font-size: $tiny
+            color: $lightGrey
+            p
+                margin: 0 20px
+
+    
